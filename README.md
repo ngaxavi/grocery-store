@@ -1,3 +1,6 @@
+[![Coverage Status](https://coveralls.io/repos/github/ngaxavi/grocery-store/badge.svg?branch=master)](https://coveralls.io/github/ngaxavi/grocery-store?branch=master)
+[![Build Status](https://travis-ci.org/ngaxavi/grocery-store.svg?branch=master)](https://travis-ci.org/ngaxavi/grocery-store)
+
 # GroceryStore
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
