@@ -1,6 +1,9 @@
 [![Coverage Status](https://coveralls.io/repos/github/ngaxavi/grocery-store/badge.svg?branch=master)](https://coveralls.io/github/ngaxavi/grocery-store?branch=master)
 [![Build Status](https://travis-ci.org/ngaxavi/grocery-store.svg?branch=master)](https://travis-ci.org/ngaxavi/grocery-store)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f650e6e555674d22a6f4a54a741c0ed7)](https://www.codacy.com/app/ngaxavi/grocery-store?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ngaxavi/grocery-store&amp;utm_campaign=Badge_Grade)
+[![Known Vulnerabilities](https://snyk.io/test/github/ngaxavi/grocery-store/badge.svg?targetFile=package.json)](https://snyk.io/test/github/ngaxavi/grocery-store?targetFile=package.json)
+
+
 
 # GroceryStore
 
