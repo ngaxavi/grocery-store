@@ -6,7 +6,7 @@ import { ProductsComponent } from './products.component';
   imports: [
     RouterModule.forChild([
       {
-        path: '',
+        path: 'products',
         component: ProductsComponent,
         children: []
       }

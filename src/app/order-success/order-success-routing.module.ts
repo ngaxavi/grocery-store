@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     RouterModule.forChild([
       {
-        path: '',
+        path: 'order-success',
         component: OrderSuccessComponent,
         children: []
       }

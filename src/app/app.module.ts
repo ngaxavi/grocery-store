@@ -16,6 +16,7 @@ import { OrderSuccessModule } from './order-success/order-success.module';
 import { ShoppingCartModule } from './shopping-cart/shopping-cart.module';
 import { SharedModule } from './shared/shared.module';
 import { AdminModule } from './admin/admin.module';
+import { MyOrdersModule } from './my-orders/my-orders.module';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, HomeComponent],
@@ -25,13 +26,14 @@ import { AdminModule } from './admin/admin.module';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AppRoutingModule,
     ProductsModule,
     CheckOutModule,
     OrderSuccessModule,
     ShoppingCartModule,
+    MyOrdersModule,
     AdminModule,
-    SharedModule
+    SharedModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

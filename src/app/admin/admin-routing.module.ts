@@ -7,6 +7,7 @@ import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
   imports: [
     RouterModule.forChild([
       {
+        path: 'admin',
         children: [
           {
             path: 'products',

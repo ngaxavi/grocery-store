@@ -5,6 +5,11 @@ import { HomeComponent } from './home/home.component';
 const ROUTES: Routes = [
   {
     path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
     component: HomeComponent
   },
   {
@@ -24,7 +29,7 @@ const ROUTES: Routes = [
     loadChildren: 'app/order-success/order-success.module#OrderSuccessModule'
   },
   {
-    path: 'my/orders',
+    path: 'my-orders',
     loadChildren: 'app/my-orders/my-orders.module#MyOrdersModule'
   },
   {
