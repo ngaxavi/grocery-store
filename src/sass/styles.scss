@@ -3,3 +3,7 @@
 @import 'variables';
 @import '~bourbon/core/bourbon';
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  padding-top: 5rem;
+}

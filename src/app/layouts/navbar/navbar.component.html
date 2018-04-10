@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+  <a class="navbar-brand logo" routerLink="/">
+    <span>Grocery</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="toggleNavbar()"
+          data-target="#navbarsExampleDefault"
+          aria-controls="navbarsExampleDefault" [attr.aria-expanded]="!isNavbarCollapsed"
+          aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" [ngbCollapse]="isNavbarCollapsed">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="/shopping-cart" class="nav-link">Shopping Cart</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li ngbDropdown class="nav-item dropdown pointer" placement="bottom-right">
+        <a class="nav-link dropdown-toggle" ngbDropdownToggle>
+          <span>
+            <span>Username</span>
+            <b class="caret"></b>
+          </span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+            <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
+            <a class="dropdown-item" routerLink="/admin/orders">Manage Orders</a>
+            <a class="dropdown-item" routerLink="/admin/products">Manage Products</a>
+            <a class="dropdown-item">Log out</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
