@@ -12,7 +12,7 @@
     "cc": "yarn prettier && yarn lint",
     "prettier": "prettier --write src/**/*{ts,scss,md}",
     "precommit": "yarn pretty-quick --staged && yarn commitlint && yarn lint",
-    "commitlint": "commitlint -e $GIT_PARAMS",
+    "commitlint": "commitlint -e",
     "test:cover": "rm -rf ./coverage && ng test --no-watch --code-coverage",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
