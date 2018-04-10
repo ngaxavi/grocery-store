@@ -7,6 +7,5 @@ export const environment = {
     projectId: 'grocery-store-fb4a8',
     storageBucket: '',
     messagingSenderId: '750459237491'
-
   }
 };
