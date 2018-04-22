@@ -1,0 +1,55 @@
+<div class="login-card">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="login-item">
+        <h3 class="login-heading">Sign in to Grocery Shopping</h3>
+      </div>
+      <div class="login-item" style="margin-bottom: 1.7rem">
+        <button (click)="googleLogin()" class="btn google-btn oauth-provider">
+          <span class="fa fa-google oauth-provider-icon"></span>
+          <span class="ml-2" style="font-size: 20px;">Login with Google</span>
+        </button>
+      </div>
+      <div class="alert alert-danger" [hidden]="!authenticationError">
+        <span class="fa fa-warning"></span>
+        <span class="text-md-center"><strong>{{authErrorMessage}}</strong></span>
+      </div>
+      <form class="form" role="form" #loginForm=ngForm (ngSubmit)="emailLogin()">
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <span class="input-group-text fa fa-envelope"></span>
+            </div>
+            <input type="text"
+                   [(ngModel)]="credentials.email"
+                   class="form-control"
+                   id="username"
+                   name="username" placeholder="Email" required email>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <span class="input-group-text fa fa-lock"></span>
+            </div>
+            <input type="password"
+                   [(ngModel)]="credentials.password"
+                   class="form-control"
+                   id="password"
+                   name="password" placeholder="Password" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" [disabled]="!loginForm.valid"
+                  class="btn btn-outline-grocery btn-block" name="submit">Log in</button>
+        </div>
+        <a class="forgot">Forgot password?</a>
+        <div class="register">
+          <span>You don't have an account yet? </span>
+          <a (click)="register()"> Sign Up </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

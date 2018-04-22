@@ -1,0 +1,84 @@
+$olive-green: #888551;
+$pear-color: #aca81b;
+$tangerine-color: #f2933a;
+$orge-color: #ad631f;
+$dandelion-color: #ffce2b;
+
+.google-btn {
+  color: $dandelion-color;
+  background-color: rgba(#aca81b, 0.05);
+  border-color: $dandelion-color;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  &:hover,
+  &:focus {
+    background-color: rgba(#aca81b, 0.3);
+  }
+}
+
+.login-heading {
+  border-bottom: 3px solid #fff;
+  margin-bottom: 1.7rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.414rem;
+  color: #fff;
+}
+
+.login-item {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.oauth-provider-icon {
+  padding-right: 0.85rem !important;
+  font-size: 1.5em;
+  border-right: 2px solid $dandelion-color;
+}
+
+.oauth-provider > * {
+  vertical-align: middle;
+}
+
+.login-card {
+  padding: 1.5%;
+}
+
+h3 {
+  font-weight: 700;
+}
+
+.forgot {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: #fff !important;
+  opacity: 0.9;
+  text-decoration: none;
+  &:hover,
+  &:active {
+    color: $dandelion-color !important;
+    text-decoration: none;
+  }
+}
+
+.remember-me {
+  color: #fff;
+}
+
+.register {
+  font-size: 14px;
+  margin-top: 30px;
+  text-align: center;
+  span {
+    color: #fff;
+  }
+  a {
+    text-decoration: none;
+    color: $dandelion-color;
+    cursor: pointer;
+    &:hover {
+      color: rgba(255, 206, 43, 0.5);
+    }
+  }
+}

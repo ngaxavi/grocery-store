@@ -14,22 +14,34 @@
       <li class="nav-item">
         <a routerLink="/shopping-cart" class="nav-link">Shopping Cart</a>
       </li>
+      <ng-template #anonymousUser>
+        <li class="nav-item">
+          <a routerLink="/login" class="nav-link">Login</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/register" class="nav-link">Register</a>
+        </li>
+      </ng-template>
     </ul>
     <ul class="navbar-nav ml-auto">
-      <li ngbDropdown class="nav-item dropdown pointer" placement="bottom-right">
+      <li ngbDropdown *ngIf="currentUser; else anonymousUser" class="nav-item dropdown pointer" placement="bottom-right">
         <a class="nav-link dropdown-toggle" ngbDropdownToggle>
           <span>
-            <span>Username</span>
+            <span>{{ currentUser.displayName }}</span>
             <b class="caret"></b>
           </span>
         </a>
         <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
             <a class="dropdown-item" routerLink="/my-orders">My Orders</a>
+          <ng-container *ngIf="isAdmin()">
             <a class="dropdown-item" routerLink="/admin/orders">Manage Orders</a>
             <a class="dropdown-item" routerLink="/admin/products">Manage Products</a>
-            <a class="dropdown-item">Log out</a>
+          </ng-container>
+            <a class="dropdown-item" (click)="logout()">Log out</a>
         </div>
       </li>
     </ul>
   </div>
 </nav>
+
+

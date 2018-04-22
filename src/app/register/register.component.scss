@@ -1,0 +1,19 @@
+.register-heading {
+  border-bottom: 3px solid #fff;
+  margin-bottom: 1.7rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.414rem;
+  color: #fff;
+}
+$dandelion-color: #ffce2b;
+
+.sign-in {
+  a {
+    text-decoration: none;
+    color: $dandelion-color;
+    cursor: pointer;
+    &:hover {
+      color: rgba(255, 206, 43, 0.5);
+    }
+  }
+}

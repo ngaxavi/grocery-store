@@ -1,3 +1,12 @@
 .dropdown-toggle {
   cursor: pointer;
 }
+
+.gradient {
+  background: linear-gradient(120deg, #5cf50e, #14ff7b);
+  color: #fff;
+}
+
+.portfolio-navbar.navbar {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

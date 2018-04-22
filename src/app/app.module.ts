@@ -17,15 +17,21 @@ import { ShoppingCartModule } from './shopping-cart/shopping-cart.module';
 import { SharedModule } from './shared/shared.module';
 import { AdminModule } from './admin/admin.module';
 import { MyOrdersModule } from './my-orders/my-orders.module';
+import { LoginComponent } from './login/login.component';
+import { CoreModule } from './core/core.module';
+import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent],
+  declarations: [AppComponent, NavbarComponent, HomeComponent, LoginComponent, RegisterComponent],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    FormsModule,
+    CoreModule,
     ProductsModule,
     CheckOutModule,
     OrderSuccessModule,
@@ -35,7 +41,6 @@ import { MyOrdersModule } from './my-orders/my-orders.module';
     SharedModule,
     AppRoutingModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

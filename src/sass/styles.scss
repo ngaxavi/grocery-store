@@ -1,8 +1,41 @@
-@charset "utf-8"; /* You can add global styles to this file, and also import other style files */
+@charset "utf-8";
+/* You can add global styles to this file, and also import other style files */
 @import 'variables';
 @import '~bourbon/core/bourbon';
 @import '~bootstrap/scss/bootstrap';
 
 body {
   padding-top: 5rem;
+  font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: $background;
+  color: white;
+}
+
+.g-item {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.g-padding {
+  padding: 1.5%;
+}
+
+.btn-outline-grocery {
+  color: $dandelion-color;
+  background: transparent none;
+  border-color: $dandelion-color;
+  &:hover {
+    color: #fff;
+    background-color: $dandelion-color;
+    border-color: $dandelion-color;
+  }
+  &:focus,
+  &.focus {
+    box-shadow: 0 0 0 0.2rem #ffce2b;
+  }
+  &:disabled,
+  &:disabled {
+    color: $dandelion-color;
+    background-color: transparent;
+  }
 }
