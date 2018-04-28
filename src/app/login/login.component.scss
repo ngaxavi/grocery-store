@@ -18,11 +18,10 @@ $dandelion-color: #ffce2b;
 }
 
 .login-heading {
-  border-bottom: 3px solid #fff;
+  border-bottom: 3px solid #ddd;
   margin-bottom: 1.7rem;
   padding-bottom: 0.5rem;
   font-size: 1.414rem;
-  color: #fff;
 }
 
 .login-item {
@@ -52,7 +51,6 @@ h3 {
   display: block;
   text-align: center;
   font-size: 14px;
-  color: #fff !important;
   opacity: 0.9;
   text-decoration: none;
   &:hover,
@@ -63,16 +61,12 @@ h3 {
 }
 
 .remember-me {
-  color: #fff;
 }
 
 .register {
   font-size: 14px;
   margin-top: 30px;
   text-align: center;
-  span {
-    color: #fff;
-  }
   a {
     text-decoration: none;
     color: $dandelion-color;

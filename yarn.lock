@@ -888,7 +888,7 @@ babel-polyfill@6.26.0:
     core-js "^2.5.0"
     regenerator-runtime "^0.10.5"
 
-babel-runtime@6.26.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0:
+babel-runtime@6.26.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0, babel-runtime@^6.6.1:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -4499,6 +4499,15 @@ libmime@3.0.0:
     libbase64 "0.1.0"
     libqp "1.1.0"
 
+libphonenumber-js@^0.4.5:
+  version "0.4.52"
+  resolved "https://registry.yarnpkg.com/libphonenumber-js/-/libphonenumber-js-0.4.52.tgz#19aec62488f039faee243df14d68ae56d77780a6"
+  dependencies:
+    babel-runtime "^6.6.1"
+    bluebird "^3.4.6"
+    minimist "^1.2.0"
+    xml2js "^0.4.17"
+
 libqp@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/libqp/-/libqp-1.1.0.tgz#f5e6e06ad74b794fb5b5b66988bf728ef1dedbe8"
@@ -5068,6 +5077,12 @@ netmask@~1.0.4:
 next-tick@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
+
+ng2-validation@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/ng2-validation/-/ng2-validation-4.2.0.tgz#f38d441d3fb7e862155166480045aaff9ad11dbb"
+  dependencies:
+    libphonenumber-js "^0.4.5"
 
 no-case@^2.2.0:
   version "2.3.2"

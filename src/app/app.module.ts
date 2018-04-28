@@ -21,6 +21,7 @@ import { LoginComponent } from './login/login.component';
 import { CoreModule } from './core/core.module';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { CustomFormsModule } from 'ng2-validation';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, HomeComponent, LoginComponent, RegisterComponent],
@@ -31,6 +32,7 @@ import { RegisterComponent } from './register/register.component';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     FormsModule,
+    CustomFormsModule,
     CoreModule,
     ProductsModule,
     CheckOutModule,

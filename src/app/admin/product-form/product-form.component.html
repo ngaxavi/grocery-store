@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col">
+    <form #f="ngForm" (ngSubmit)="save(f.value)">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input #title="ngModel" [(ngModel)]="product.title" name="title" id="title" type="text" class="form-control" required>
+        <div *ngIf="title.invalid && (title.dirty || title.touched)">
+          <small class="form-text text-danger" *ngIf="title.errors.required">Title is required.</small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <div class="input-group mb-3">
+      <span class="input-group-prepend">
+         <span class="input-group-text">€</span>
+      </span>
+          <input #price="ngModel" [(ngModel)]="product.price" name="price" id="price" type="number" class="form-control" required [min]="0">
+        </div>
+        <div *ngIf="price.invalid && (price.dirty || price.touched)">
+          <small class="form-text text-danger" *ngIf="price.errors.required">Price is required.</small>
+          <small class="form-text text-danger" *ngIf="price.errors.min">Price should be 0 or higher.</small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select #category="ngModel" [(ngModel)]="product.category" name="category" id="category" class="form-control" required>
+          <option value=""></option>
+          <option *ngFor="let c of categories$ | async" [value]="c.id">
+            {{ c.name }}
+          </option>
+        </select>
+        <div *ngIf="category.invalid && (category.dirty || category.touched)">
+          <small class="form-text text-danger" *ngIf="category.errors.required">Category is required.</small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="imageUrl">Image URL</label>
+        <input #imageUrl="ngModel" [(ngModel)]="product.imageUrl" name="imageUrl" id="imageUrl" type="text" class="form-control" required url>
+        <div *ngIf="imageUrl.invalid && (imageUrl.dirty || imageUrl.touched)">
+          <small class="form-text text-danger" *ngIf="imageUrl.errors.required">Image URL is required.</small>
+          <small class="form-text text-danger" *ngIf="imageUrl.errors.url">Please enter valid url.</small>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="button" (click)="delete()"  class="btn btn-danger">Delete</button>
+    </form>
+  </div>
+  <div class="col" style="top: 1rem; left: 3rem">
+    <div *ngIf="product.title" class="card" style="width: 25rem;">
+      <img class="card-img-top" [src]="product.imageUrl" *ngIf="product.imageUrl">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.title }}</h5>
+        <p class="card-text">{{ product.price | currency:'EUR':'symbol'}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+

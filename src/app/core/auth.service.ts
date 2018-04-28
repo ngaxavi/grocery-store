@@ -83,6 +83,9 @@ export class AuthService {
       // save the user
       this.updateUserData(user);
       const returnUrl = localStorage.getItem('returnUrl') || '/';
+      if (returnUrl !== '/') {
+        localStorage.removeItem('returnUrl');
+      }
       this.router.navigateByUrl(returnUrl);
     }
   }
