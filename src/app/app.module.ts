@@ -40,7 +40,6 @@ import { CustomFormsModule } from 'ng2-validation';
     ShoppingCartModule,
     MyOrdersModule,
     AdminModule,
-    SharedModule,
     AppRoutingModule
   ],
   bootstrap: [AppComponent]

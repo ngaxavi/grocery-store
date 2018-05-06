@@ -5,16 +5,12 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './core/auth.guard';
 import { AdminGuard } from './core/admin.guard';
 import { RegisterComponent } from './register/register.component';
+import { ProductsComponent } from './products/products.component';
 
 const ROUTES: Routes = [
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: HomeComponent
+    component: ProductsComponent
   },
   {
     path: 'login',

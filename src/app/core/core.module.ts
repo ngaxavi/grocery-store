@@ -6,9 +6,10 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AdminGuard } from './admin.guard';
 import { CategoryService } from './category.service';
 import { ProductService } from './product.service';
+import { ShoppingCartService } from './shopping-cart.service';
 
 @NgModule({
   imports: [AngularFireAuthModule, AngularFirestoreModule],
-  providers: [AuthService, AuthGuard, AdminGuard, CategoryService, ProductService]
+  providers: [AuthService, AuthGuard, AdminGuard, CategoryService, ProductService, ShoppingCartService]
 })
 export class CoreModule {}

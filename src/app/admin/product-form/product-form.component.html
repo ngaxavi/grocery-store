@@ -46,13 +46,7 @@
     </form>
   </div>
   <div class="col" style="top: 1rem; left: 3rem">
-    <div *ngIf="product.title" class="card" style="width: 25rem;">
-      <img class="card-img-top" [src]="product.imageUrl" *ngIf="product.imageUrl">
-      <div class="card-body">
-        <h5 class="card-title">{{ product.title }}</h5>
-        <p class="card-text">{{ product.price | currency:'EUR':'symbol'}}</p>
-      </div>
-    </div>
+    <gs-product-card [product]="product" [showActions]="false"></gs-product-card>
   </div>
 </div>
 

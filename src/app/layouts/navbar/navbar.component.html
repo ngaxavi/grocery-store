@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-  <a class="navbar-brand logo" routerLink="/home">
+  <a class="navbar-brand logo" routerLink="/">
     <span>Grocery</span>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="toggleNavbar()"
@@ -12,7 +12,12 @@
   <div class="collapse navbar-collapse" [ngbCollapse]="isNavbarCollapsed">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a routerLink="/shopping-cart" class="nav-link">Shopping Cart</a>
+        <a routerLink="/shopping-cart" class="nav-link">
+          <span>Shopping Cart</span>
+          <span class="badge badge-warning badge-pill" *ngIf="cart$ | async as cart">
+            {{ cart.totalItemsCount }}
+          </span>
+        </a>
       </li>
       <ng-template #anonymousUser>
         <li class="nav-item">

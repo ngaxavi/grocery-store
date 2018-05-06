@@ -4,7 +4,6 @@ import { Observable } from 'rxjs/Observable';
 import { ProductService } from '../../core/product.service';
 import { Category } from '../../models/category';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from '../../models/product';
 import 'rxjs/add/operator/take';
 
 @Component({
@@ -23,7 +22,7 @@ export class ProductFormComponent implements OnInit {
     private productService: ProductService,
     private router: Router
   ) {
-    this.categories$ = this.categoryService.getCategories();
+    this.categories$ = this.categoryService.getAll();
 
     this.id = this.route.snapshot.paramMap.get('id');
 

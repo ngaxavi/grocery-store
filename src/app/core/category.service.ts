@@ -9,7 +9,7 @@ export class CategoryService {
     this.categoryCollection = this.afs.collection<Category>('categories');
   }
 
-  getCategories() {
+  getAll() {
     return this.categoryCollection.snapshotChanges().map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data() as any;

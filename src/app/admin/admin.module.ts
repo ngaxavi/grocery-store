@@ -5,9 +5,10 @@ import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  imports: [CommonModule, AdminRoutingModule, FormsModule],
+  imports: [CommonModule, AdminRoutingModule, FormsModule, SharedModule],
   declarations: [AdminProductsComponent, AdminOrdersComponent, ProductFormComponent]
 })
 export class AdminModule {}
