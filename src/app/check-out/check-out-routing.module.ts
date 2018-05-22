@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CheckOutComponent } from './check-out.component';
 import { RouterModule } from '@angular/router';
+import { AuthGuard } from '../core/auth.guard';
 
 @NgModule({
   imports: [
@@ -8,7 +9,8 @@ import { RouterModule } from '@angular/router';
       {
         path: 'check-out',
         component: CheckOutComponent,
-        children: []
+        children: [],
+        canActivate: [AuthGuard]
       }
     ])
   ],

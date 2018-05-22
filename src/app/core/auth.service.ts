@@ -48,6 +48,8 @@ export class AuthService {
   }
 
   private oAuthLogin(provider: firebase.auth.AuthProvider) {
+    const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
+    localStorage.setItem('returnUrl', returnUrl);
     return new Promise((resolve, reject) => {
       this.afAuth.auth
         .signInWithPopup(provider)
