@@ -40,6 +40,10 @@ export class NavbarComponent implements OnInit {
     this.isNavbarCollapsed = !this.isNavbarCollapsed;
   }
 
+  collapseNavbar() {
+    this.isNavbarCollapsed = true;
+  }
+
   isAdmin(): boolean {
     return this.authService.hasAdminRole(this.currentUser);
   }

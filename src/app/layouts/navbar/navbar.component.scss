@@ -2,6 +2,8 @@
   cursor: pointer;
 }
 
+@import '../../../sass/variables';
+
 .gradient {
   background: linear-gradient(120deg, #5cf50e, #14ff7b);
   color: #fff;
@@ -9,4 +11,164 @@
 
 .portfolio-navbar.navbar {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.avatar {
+  padding: 0;
+}
+
+.z-depth-0 {
+  box-shadow: none !important;
+}
+
+.navbar {
+  .nav-item {
+    &.avatar {
+      padding: 0;
+      &.active {
+        background-color: transparent !important;
+      }
+      .dropdown-toggle {
+        padding: 0;
+        &:after {
+          display: none;
+        }
+        img {
+          height: 35px;
+        }
+      }
+    }
+  }
+}
+
+.waves-effect {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  z-index: 1;
+
+  .waves-ripple {
+    position: absolute;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.2);
+    background: -webkit-radial-gradient(
+      rgba(0, 0, 0, 0.2) 0,
+      rgba(0, 0, 0, 0.3) 40%,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.5) 60%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    background: radial-gradient(
+      rgba(0, 0, 0, 0.2) 0,
+      rgba(0, 0, 0, 0.3) 40%,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.5) 60%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    -webkit-transition-property: opacity, -webkit-transform;
+    transition-property: opacity, -webkit-transform;
+    transition-property: transform, opacity;
+    transition-property: transform, opacity, -webkit-transform;
+    -webkit-transform: scale(0) translate(0, 0);
+    -ms-transform: scale(0) translate(0, 0);
+    transform: scale(0) translate(0, 0);
+    pointer-events: none;
+  }
+  &.waves-light {
+    background: rgba(255, 255, 255, 0.4);
+    background: -webkit-radial-gradient(
+      rgba(255, 255, 255, 0.2) 0,
+      rgba(255, 255, 255, 0.3) 40%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0.5) 60%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    background: radial-gradient(
+      rgba(255, 255, 255, 0.2) 0,
+      rgba(255, 255, 255, 0.3) 40%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0.5) 60%,
+      rgba(255, 255, 255, 0) 70%
+    );
+  }
+}
+
+.navbar .nav-flex-icons {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.navbar-collapse {
+  border-color: rgba(255, 255, 255, 0.3);
+  ul {
+    .login {
+      color: #d9d9d9;
+      text-decoration: none;
+      &:hover {
+        color: orange;
+      }
+    }
+  }
+  .navbar-nav {
+    > li {
+      > a {
+        &:focus,
+        &:hover {
+          color: $primary-color;
+        }
+      }
+      > .dropdown-menu {
+        margin-top: -5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 2px;
+        > li > a:hover {
+          background-color: $primary-color;
+        }
+        > .active {
+          > a {
+            background-color: $primary-color;
+          }
+        }
+      }
+    }
+    > .active > a {
+      background: none;
+      box-shadow: none;
+      color: $primary-color;
+      &:focus,
+      &:hover {
+        color: $primary-color;
+        box-shadow: none;
+        background: none;
+        pointer-events: none;
+      }
+    }
+    > .open > a {
+      background: none;
+      box-shadow: none;
+      &:focus {
+        background: none;
+      }
+    }
+  }
 }
