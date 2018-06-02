@@ -16,6 +16,7 @@ export class ProductsComponent implements OnInit {
   products: Product[] = [];
   filteredProducts: Product[] = [];
   category: string;
+  showSpinner = true;
   cart$: Observable<ShoppingCart>;
   constructor(
     private productService: ProductService,
@@ -50,6 +51,7 @@ export class ProductsComponent implements OnInit {
       .subscribe(params => {
         this.category = params.get('category');
         this.applyFilter();
+        this.showSpinner = false;
       });
   }
 

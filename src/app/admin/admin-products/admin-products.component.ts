@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ProductService } from '../../core/product.service';
-import { Product } from '../../shared/models/product';
+import { ProductService } from '@core/product.service';
+import { Product } from '@shared/models/product';
 import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
 
@@ -13,11 +13,13 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
   products: Product[];
   filteredProducts: Product[];
   subscription: Subscription;
+  showSpinner = true;
 
   constructor(private productService: ProductService, private router: Router) {
-    this.subscription = this.productService
-      .getAll()
-      .subscribe(products => (this.filteredProducts = this.products = products));
+    this.subscription = this.productService.getAll().subscribe(products => {
+      this.filteredProducts = this.products = products;
+      this.showSpinner = false;
+    });
   }
 
   filter(query: string) {

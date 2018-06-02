@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { RouterModule } from '@angular/router';
-import { AuthGuard } from '../core/auth.guard';
+import { AuthGuard } from '@core/auth.guard';
 import { OrderSuccessComponent } from './order-success/order-success.component';
 import { ProductsComponent } from './products/products.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';

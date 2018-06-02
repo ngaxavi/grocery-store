@@ -1,4 +1,5 @@
-<div class="row">
+<gs-loading-spinner *ngIf="showSpinner"></gs-loading-spinner>
+<div class="row" *ngIf="!showSpinner">
   <div class="col-3">
     <gs-product-filter [category]="category"></gs-product-filter>
   </div>

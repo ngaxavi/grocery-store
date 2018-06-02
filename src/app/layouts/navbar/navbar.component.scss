@@ -138,16 +138,14 @@
         }
       }
       > .dropdown-menu {
-        margin-top: -5px;
+        margin-top: 15px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 2px;
-        > li > a:hover {
-          background-color: $primary-color;
+        > a:hover {
+          background-color: #d1e6be;
         }
-        > .active {
-          > a {
-            background-color: $primary-color;
-          }
+        > .dropdown-item.active {
+          background-color: $primary-color;
         }
       }
     }
