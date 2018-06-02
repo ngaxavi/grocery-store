@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/switchMap';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
-import { User } from '../models/user';
+import { User } from '@shared/models/user';
 
 @Injectable()
 export class AuthService {

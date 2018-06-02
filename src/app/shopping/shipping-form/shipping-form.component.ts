@@ -1,11 +1,10 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Order } from '../../models/order';
-import { ShoppingCart } from '../../models/shopping-cart';
+import { Order } from '@shared/models/order';
+import { ShoppingCart } from '@shared/models/shopping-cart';
 import { Subscription } from 'rxjs/Subscription';
-import { ShoppingCartService } from '../../core/shopping-cart.service';
 import { Router } from '@angular/router';
-import { OrderService } from '../../core/order.service';
-import { AuthService } from '../../core/auth.service';
+import { OrderService } from '@core/order.service';
+import { AuthService } from '@core/auth.service';
 
 @Component({
   selector: 'gs-shipping-form',

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Product } from '../../models/product';
+import { Product } from '../models/product';
 import { ShoppingCartService } from '../../core/shopping-cart.service';
-import { ShoppingCart } from '../../models/shopping-cart';
+import { ShoppingCart } from '../models/shopping-cart';
 
 @Component({
   selector: 'gs-product-card',

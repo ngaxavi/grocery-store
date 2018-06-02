@@ -3,12 +3,15 @@ import { AdminProductsComponent } from './admin-products/admin-products.componen
 import { RouterModule } from '@angular/router';
 import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
 import { ProductFormComponent } from './product-form/product-form.component';
+import { AuthGuard } from '@core/auth.guard';
+import { AdminGuard } from '@core/admin.guard';
 
 @NgModule({
   imports: [
     RouterModule.forChild([
       {
         path: 'admin',
+        canActivate: [AuthGuard, AdminGuard],
         children: [
           {
             path: 'products/new',

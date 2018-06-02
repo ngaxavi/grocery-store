@@ -1,44 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
-import { NavbarComponent } from './layouts/navbar/navbar.component';
+import { NavbarComponent } from '@layouts/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ProductsModule } from './products/products.module';
-import { CheckOutModule } from './check-out/check-out.module';
-import { OrderSuccessModule } from './order-success/order-success.module';
-import { ShoppingCartModule } from './shopping-cart/shopping-cart.module';
-import { SharedModule } from './shared/shared.module';
-import { AdminModule } from './admin/admin.module';
-import { MyOrdersModule } from './my-orders/my-orders.module';
-import { LoginComponent } from './login/login.component';
-import { CoreModule } from './core/core.module';
-import { FormsModule } from '@angular/forms';
-import { RegisterComponent } from './register/register.component';
-import { CustomFormsModule } from 'ng2-validation';
+import { AdminModule } from '@admin/admin.module';
+import { CoreModule } from '@core/core.module';
+import { ShoppingModule } from '@shopping/shopping.module';
+import { AccountModule } from '@account/account.module';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, LoginComponent, RegisterComponent],
+  declarations: [AppComponent, NavbarComponent],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule,
+    AngularFirestoreModule,
     AngularFireAuthModule,
-    FormsModule,
-    CustomFormsModule,
+    AccountModule,
     CoreModule,
-    ProductsModule,
-    CheckOutModule,
-    OrderSuccessModule,
-    ShoppingCartModule,
-    MyOrdersModule,
+    ShoppingModule,
     AdminModule,
     AppRoutingModule
   ],

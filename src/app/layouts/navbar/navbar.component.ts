@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../core/auth.service';
-import { User } from '../../models/user';
-import { ShoppingCartService } from '../../core/shopping-cart.service';
-import { ShoppingCartItem } from '../../models/shopping-cart-item';
+import { AuthService } from '@core/auth.service';
+import { User } from '@shared/models/user';
+import { ShoppingCartService } from '@core/shopping-cart.service';
 import { Observable } from 'rxjs/Observable';
-import { ShoppingCart } from '../../models/shopping-cart';
+import { ShoppingCart } from '@shared/models/shopping-cart';
 
 @Component({
   selector: 'gs-navbar',

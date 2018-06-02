@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ShoppingCartService } from '../core/shopping-cart.service';
-import { ShoppingCart } from '../models/shopping-cart';
-import { Observable } from 'rxjs/Observable';
+import { ShoppingCartService } from '@core/shopping-cart.service';
+import { ShoppingCart } from '@shared/models/shopping-cart';
 
 @Component({
-  selector: 'gs-check-out',
-  templateUrl: './check-out.component.html',
-  styleUrls: ['./check-out.component.scss']
+  selector: 'gs-shopping-cart',
+  templateUrl: './shopping-cart.component.html',
+  styleUrls: ['./shopping-cart.component.scss']
 })
-export class CheckOutComponent implements OnInit {
-  cart$: Observable<ShoppingCart>;
+export class ShoppingCartComponent implements OnInit {
+  cart$;
   constructor(private cartService: ShoppingCartService) {}
 
   async ngOnInit() {
@@ -25,5 +24,9 @@ export class CheckOutComponent implements OnInit {
       .map(items => {
         return new ShoppingCart(items);
       });
+  }
+
+  clearCart() {
+    this.cartService.clearCart();
   }
 }

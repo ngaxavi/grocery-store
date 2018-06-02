@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CategoryService } from '../../core/category.service';
+import { CategoryService } from '@core/category.service';
 
 @Component({
   selector: 'gs-product-filter',

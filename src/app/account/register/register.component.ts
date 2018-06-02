@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../core/auth.service';
+import { AuthService } from '../../core/auth.service';
 import { Router } from '@angular/router';
-import { User } from '../models/user';
+import { User } from '../../shared/models/user';
 
 @Component({
   selector: 'gs-register',
