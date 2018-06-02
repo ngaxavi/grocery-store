@@ -3,12 +3,50 @@
 @import 'variables';
 @import '~bourbon/core/bourbon';
 @import '~bootstrap/scss/bootstrap';
+@import '~font-awesome/scss/font-awesome';
 
 body {
   padding-top: 5rem;
   font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  //background: $background;
-  //color: white;
+}
+
+.navbar {
+  border-bottom: 3px solid #e7e7e7;
+}
+
+.navbar-light {
+  .navbar-brand {
+    color: $primary-color;
+    &:focus,
+    &:hover {
+      color: $primary-color-hover;
+    }
+  }
+}
+
+.list-group-item {
+  &.active {
+    background-color: $primary-color;
+    border-color: $primary-color;
+  }
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  &:hover {
+    background-color: $primary-color-hover;
+    border-color: $primary-color-hover;
+  }
+  &.disabled,
+  &:disabled {
+    background-color: $primary-color;
+    border-color: $primary-color;
+  }
+}
+
+.form-control:focus {
+  border-color: $primary-color;
 }
 
 .g-item {
