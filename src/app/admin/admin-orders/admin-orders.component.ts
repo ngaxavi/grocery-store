@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderService } from '../../core/order.service';
 
 @Component({
   selector: 'gs-admin-orders',
@@ -6,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-orders.component.scss']
 })
 export class AdminOrdersComponent implements OnInit {
-  constructor() {}
+  orders$;
+  constructor(private orderService: OrderService) {
+    this.orders$ = orderService.getOrders();
+  }
 
   ngOnInit() {}
 }

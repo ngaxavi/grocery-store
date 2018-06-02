@@ -7,8 +7,13 @@ import { RouterModule } from '@angular/router';
     RouterModule.forChild([
       {
         path: 'order-success',
-        component: OrderSuccessComponent,
-        children: []
+        // component: OrderSuccessComponent,
+        children: [
+          {
+            path: ':id',
+            component: OrderSuccessComponent
+          }
+        ]
       }
     ])
   ],
