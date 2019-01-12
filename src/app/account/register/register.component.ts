@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
       this.errorMessage = null;
       this.authService
         .emailSignUp(this.registerAccount.email, this.registerAccount.password)
-        .then(user => {
+        .then((user: any) => {
           this.success = true;
           console.log(this.registerAccount.name);
           const data = {

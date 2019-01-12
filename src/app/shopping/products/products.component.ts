@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '@core/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '@shared/models/product';
-import 'rxjs/add/operator/switchMap';
 import { ShoppingCartService } from '@core/shopping-cart.service';
 import { ShoppingCart } from '@shared/models/shopping-cart';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'gs-products',
@@ -18,6 +18,7 @@ export class ProductsComponent implements OnInit {
   category: string;
   showSpinner = true;
   cart$: Observable<ShoppingCart>;
+
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
@@ -25,18 +26,18 @@ export class ProductsComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
-    this.cart$ = (await this.cartService.getCart())
-      .snapshotChanges()
-      .map(actions => {
+    this.cart$ = (await this.cartService.getCart()).snapshotChanges().pipe(
+      map(actions => {
         return actions.map(a => {
           const data = a.payload.doc.data() as any;
           const id = a.payload.doc.id;
           return { id, ...data };
         });
-      })
-      .map(items => {
+      }),
+      map(items => {
         return new ShoppingCart(items);
-      });
+      })
+    );
 
     this.populateProducts();
   }
@@ -44,10 +45,12 @@ export class ProductsComponent implements OnInit {
   private populateProducts() {
     this.productService
       .getAll()
-      .switchMap(products => {
-        this.products = products;
-        return this.route.queryParamMap;
-      })
+      .pipe(
+        switchMap(products => {
+          this.products = products;
+          return this.route.queryParamMap;
+        })
+      )
       .subscribe(params => {
         this.category = params.get('category');
         this.applyFilter();

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Product } from '@shared/models/product';
-import 'rxjs/add/operator/take';
 import * as firebase from 'firebase';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 @Injectable()
 export class ShoppingCartService {
@@ -70,7 +70,7 @@ export class ShoppingCartService {
     const itemCollection = this.getItem(cartId, product.id);
     const item$: Observable<any> = itemCollection.valueChanges();
 
-    item$.take(1).subscribe(item => {
+    item$.pipe(take(1)).subscribe(item => {
       const quantity = ((item && item.quantity) || 0) + change;
 
       if (quantity === 0) {

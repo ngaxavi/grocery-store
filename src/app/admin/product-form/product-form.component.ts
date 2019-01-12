@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../core/category.service';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { ProductService } from '../../core/product.service';
 import { Category } from '../../shared/models/category';
 import { ActivatedRoute, Router } from '@angular/router';
-import 'rxjs/add/operator/take';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'gs-product-form',
@@ -29,7 +29,7 @@ export class ProductFormComponent implements OnInit {
     if (this.id) {
       this.productService
         .get(this.id)
-        .take(1)
+        .pipe(take(1))
         .subscribe(p => (this.product = p));
     }
   }

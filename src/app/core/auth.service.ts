@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 
 import * as firebase from 'firebase/app';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/switchMap';
-import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { Observable, of } from 'rxjs';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { User } from '@shared/models/user';
+import { switchMap } from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
@@ -18,13 +18,15 @@ export class AuthService {
     private router: Router,
     private route: ActivatedRoute
   ) {
-    this.user$ = afAuth.authState.switchMap(user => {
-      if (user) {
-        return this.afs.doc<User>(`/users/${user.uid}`).valueChanges();
-      } else {
-        return Observable.of(null);
-      }
-    });
+    this.user$ = afAuth.authState.pipe(
+      switchMap(user => {
+        if (user) {
+          return this.afs.doc<User>(`/users/${user.uid}`).valueChanges();
+        } else {
+          return of(null);
+        }
+      })
+    );
   }
 
   // Returns true if user is logged in
@@ -53,7 +55,7 @@ export class AuthService {
     return new Promise((resolve, reject) => {
       this.afAuth.auth
         .signInWithPopup(provider)
-        .then(credential => this.backToPreviousUrl(credential.user))
+        .then((credential: any) => this.backToPreviousUrl(credential.user))
         .catch(error => reject(error));
     });
   }
@@ -69,7 +71,7 @@ export class AuthService {
     return new Promise((resolve, reject) => {
       this.afAuth.auth
         .signInWithEmailAndPassword(email, password)
-        .then(credential => this.backToPreviousUrl(credential.user))
+        .then((credential: any) => this.backToPreviousUrl(credential.user))
         .catch(error => reject(error));
     });
   }

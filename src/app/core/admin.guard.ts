@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 import { map, take, tap } from 'rxjs/operators';
+import { User } from '@shared/models/user';
 
 @Injectable()
 export class AdminGuard implements CanActivate {
@@ -13,7 +14,7 @@ export class AdminGuard implements CanActivate {
   ): Observable<boolean> | Promise<boolean> | boolean {
     return this.auth.user$.pipe(
       take(1),
-      map(user => user && user.roles.admin),
+      map((user: User) => user && user.roles.admin),
       tap(isAdmin => {
         if (!isAdmin) {
           console.error('Access denied - Admins only');

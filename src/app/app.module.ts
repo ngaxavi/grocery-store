@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
@@ -12,7 +12,7 @@ import { AdminModule } from '@admin/admin.module';
 import { CoreModule } from '@core/core.module';
 import { ShoppingModule } from '@shopping/shopping.module';
 import { AccountModule } from '@account/account.module';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent],
